@@ -12,29 +12,14 @@ public class Product
     public ProductQuantity StockQuantity { get; private set; }
 
     public Product(
-        string name,
-        string description,
-        decimal price,
-        string categoryId,
-        int stockQuantity
+        ProductName name,
+        ProductDescription description,
+        ProductPrice price,
+        ProductCategoryId categoryId,
+        ProductQuantity stockQuantity
     )
 
     {
-        if (string.IsNullOrWhiteSpace(name))
-            throw new ArgumentException("Product name cannot be empty.");
-
-        if (string.IsNullOrWhiteSpace(description))
-            throw new ArgumentException("Product description cannot be empty.");
-
-        if (price < 0)
-            throw new ArgumentException("Price cannot be negative.");
-
-        if (stockQuantity < 0)
-            throw new ArgumentException("Stock quantity cannot be negative.");
-
-        if (string.IsNullOrWhiteSpace(categoryId))
-            throw new ArgumentException("Category ID cannot be empty.");
-
         Name = name;
         Description = description;
         Price = price;
@@ -44,32 +29,21 @@ public class Product
 
     public void UpdateName(string name)
     {
-        if (string.IsNullOrWhiteSpace(name))
-            throw new ArgumentException("Product name cannot be empty.");
-
-        Name = name;
+        Name = new ProductName(name);
     }
 
     public void UpdateDescription(string description)
     {
-        if (string.IsNullOrWhiteSpace(description))
-            throw new ArgumentException("Product description cannot be empty.");
-
-        Description = description;
+        Description = new ProductDescription(description);
     }
 
     public void UpdatePrice(decimal price)
     {
-        if (price < 0)
-            throw new ArgumentException("Price cannot be negative.");
-
-        Price = price;
+        Price = new ProductPrice(price);
     }
 
     public void UpdateStock(int quantity)
     {
-        if (quantity < 0)
-            throw new ArgumentException("Quantity cannot be negative.");
-        StockQuantity += quantity;
+        StockQuantity = new ProductQuantity(StockQuantity.Value + quantity);
     }
 }

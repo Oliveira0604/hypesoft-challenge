@@ -1,14 +1,15 @@
 namespace Hypesoft.Domain.Entities;
 
+using Hypesoft.Domain.ValueObjects;
 public class Product
 {
     public string Id { get; private set; } = Guid.NewGuid().ToString();
 
-    public string Name { get; private set; }
-    public string Description { get; private set; }
-    public decimal Price { get; private set; }
-    public string CategoryId { get; private set; }
-    public int StockQuantity { get; private set; }
+    public ProductName Name { get; private set; }
+    public ProductDescription Description { get; private set; }
+    public ProductPrice Price { get; private set; }
+    public ProductCategoryId CategoryId { get; private set; }
+    public ProductQuantity StockQuantity { get; private set; }
 
     public Product(
         string name,

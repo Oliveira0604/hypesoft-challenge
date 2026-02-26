@@ -1,4 +1,4 @@
-namespace Hypesoft.Domain.DTOs;
+namespace Hypesoft.Application.DTOs;
 
 public record CreateProductRequest(
     string Name,

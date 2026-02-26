@@ -1,5 +1,5 @@
 namespace Hypesoft.Application.DTOs;
 
-public record CreateCategoryRequest(
+public record UpdateProductNameRequest(
     string Name
 );

@@ -1,4 +1,4 @@
-namespace Hypesoft.Application.Commands;
+namespace Hypesoft.Application.Commands.Category;
 
 using MediatR;
 using Hypesoft.Application.DTOs;

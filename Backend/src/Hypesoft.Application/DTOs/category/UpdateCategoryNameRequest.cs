@@ -1,4 +1,4 @@
-namespace Hypesoft.Applcation.DTOs;
+namespace Hypesoft.Application.DTOs.Category;
 
 public record UpdateCategoryNameRequest(
     string Name
